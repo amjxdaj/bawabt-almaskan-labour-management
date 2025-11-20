@@ -58,7 +58,7 @@ export function Login() {
               <Input
                 id="email"
                 type="email"
-                placeholder="manager@company.com"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -84,12 +84,6 @@ export function Login() {
             >
               {isLoading ? 'Signing in...' : 'Sign In'}
             </Button>
-
-            <div className="text-xs text-center text-muted-foreground pt-4 border-t">
-              <p className="font-medium mb-2">Demo Credentials:</p>
-              <p>Manager: manager@company.com / manager123</p>
-              <p>Supervisor: supervisor@company.com / supervisor123</p>
-            </div>
           </form>
         </CardContent>
       </Card>
