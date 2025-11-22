@@ -19,8 +19,21 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://bawabt-almaskan-labour-frontend.vercel.app',
+  process.env.CORS_ORIGIN
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
   credentials: true
 }));
 app.use(express.json());
@@ -42,6 +55,23 @@ app.use('/api/sites', siteRoutes);
 app.use('/api/payroll', payrollRoutes);
 app.use('/api/audit', auditRoutes);
 // app.use('/api/backup', backupRoutes); // Disabled - requires Google Workspace
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    name: 'Labour Management API',
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/health',
+      auth: '/api/auth/*',
+      employees: '/api/employees/*',
+      attendance: '/api/attendance/*',
+      payroll: '/api/payroll/*',
+      landing: '/api/landing/submit'
+    }
+  });
+});
 
 // Health check
 app.get('/health', (req, res) => {
