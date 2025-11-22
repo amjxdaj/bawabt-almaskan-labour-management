@@ -121,13 +121,13 @@ export function LandingPage() {
               {/* Animated Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md border border-violet-200 animate-pulse">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
-                <span className="text-sm font-medium bg-gradient-to-r from-violet-600 to-teal-600 bg-clip-text text-transparent">
+                <span className="text-sm font-medium text-violet-700">
                   Trusted by Growing Businesses
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+                <span className="text-violet-700">
                   All-in-One
                 </span>
                 <br />
@@ -336,8 +336,8 @@ export function LandingPage() {
       <section id="features" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-              <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-violet-700">
+              <span>
                 Everything You Need
               </span>
             </h2>
@@ -401,8 +401,8 @@ export function LandingPage() {
       {/* CTA Section */}
       <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-violet-700">
+            <span>
               Ready to Transform
             </span>
             <br />
